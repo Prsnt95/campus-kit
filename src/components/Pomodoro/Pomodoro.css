@@ -1,0 +1,61 @@
+.Pomodoro_wrapper{
+    background-color: rgb(27, 30, 47);
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; Centers the content vertically(flex direction is column) */
+    padding:20px;
+    color: white;
+     align-items: center;    
+     /* Centers the content horizontally when flex direction is column */
+    /*Optional: Center-aligns the text*/
+    text-align: center;    
+}
+
+.pomo-nav{
+    height: 40px;
+    width: fit-content;
+    background-color: rgb(27, 30, 80);
+    display: flex;
+    text-align: center;
+    margin-top: 10px;
+    padding: 5px;
+    justify-content: center;
+    border-radius: 10px;
+    gap: 10px;
+}
+.pomo-span{
+padding: 4px;
+border-radius: 10px;
+}
+.pomo-span:hover{
+    background-color: brown;
+    cursor: pointer;
+}
+
+.pomo-circle{
+    margin: 20px;
+    height: 200px;
+    width: 200px;
+    /* border: 5px solid red; */
+    border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width:30vmin;
+    height:30vmin; 
+    border:1vh  solid transparent;
+    border-radius:50%;
+    background:linear-gradient(rgb(18, 179, 15), rgb(16, 195, 28)) content-box no-repeat,
+               conic-gradient(red 44%, 0, green ) border-box;
+
+
+}
+
+.pomo-settings{
+    width: 100px;
+}
+

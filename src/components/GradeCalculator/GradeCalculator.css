@@ -1,0 +1,156 @@
+.allWrapper{
+  text-align: center;
+  min-height: 100vh;
+  min-width:100vh;
+  background-color: #F87272;
+
+}
+  .grade--section{
+    height:80 vh;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    
+  }
+  
+  .title{
+    padding:20px;
+    text-decoration: underline;
+  }
+
+  .interactions{
+    display: flex;
+    /* margin-top: 20px; */
+    align-items: center;
+    justify-content: center;  
+  }
+  
+  .input-div{
+    background-color: whitesmoke;
+    width: 400px;
+    height: 500px;
+    background-color: rgb(237, 232, 215);
+    /* align-items: center; */
+    /* justify-content: center; */
+    overflow-y: scroll ;
+    overflow-x:scroll;
+    font-size: small;
+
+  }
+  
+  h2{
+    padding:10px;
+  }
+  
+  .Row--inputs{
+  
+    justify-content: center;
+    padding:5px;
+  }
+  
+  .addRow{
+    width: 50%;
+    height:25px;
+    margin:2px auto;
+  }
+  
+  .addRow:hover{
+    cursor: pointer;
+  }
+  
+  
+  .Row--inputs{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .gradeInput, .weightInput{
+    width: 70px;
+  }
+  
+  input{
+    padding:2px;
+    margin:5px;
+  }
+  
+  .addtionalGrade{
+    height:20px;
+    width:50px;
+  }
+  
+  .boldText{
+    font-weight: bold;
+  }
+  .input-div--extra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .calculate{
+    height:40px;
+    width:100px;
+    background-color:darkgrey;
+    color:chocolate;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 35%;
+    
+  }
+  .calculate:hover{
+    cursor: pointer;
+    background-color: bisque;
+  }
+  
+  
+  .outputs{
+    background-color: rgb(222, 197, 197);
+    width: 300px;;
+    height:150px;
+    padding:10px;
+  
+  }
+  
+
+  
+  .outputs{
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .outputs--element{
+    margin:20px;
+    word-spacing: 1px;
+  }
+
+  .title{
+    color: #581964;
+  }
+
+  .title-wrapper{
+    justify-self: center;
+  }
+  .calculators{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+  
+  .calculators.single {
+    justify-content: center;
+    grid-template-columns: 1fr;
+  }
+  
+  @media (max-width: 1400px) {
+    .calculators {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .buttons{
+    margin-top: none;
+  }
