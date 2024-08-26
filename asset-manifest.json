@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/campus-kit/static/css/main.49eaa9b8.css",
+    "main.js": "/campus-kit/static/js/main.85f668eb.js",
+    "static/js/453.d138da78.chunk.js": "/campus-kit/static/js/453.d138da78.chunk.js",
+    "static/media/TodoImg.png": "/campus-kit/static/media/TodoImg.79bd6c564720b6e25aa0.png",
+    "static/media/pomodoro.png": "/campus-kit/static/media/pomodoro.ffc036a26ca0042a4397.png",
+    "static/media/calculator-img.png": "/campus-kit/static/media/calculator-img.422c25399fd7dbaea098.png",
+    "index.html": "/campus-kit/index.html",
+    "main.49eaa9b8.css.map": "/campus-kit/static/css/main.49eaa9b8.css.map",
+    "main.85f668eb.js.map": "/campus-kit/static/js/main.85f668eb.js.map",
+    "453.d138da78.chunk.js.map": "/campus-kit/static/js/453.d138da78.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.49eaa9b8.css",
+    "static/js/main.85f668eb.js"
+  ]
+}
