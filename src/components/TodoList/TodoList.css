@@ -41,4 +41,15 @@
     width: 100%;
   }
   
+  .active-filter{
+  background-color:  rgb(168, 168, 187) !important;
+  color: azure !important;
+  }
 
+  .todoList--buttonWrapper{
+    margin: 10px;
+    padding: 0px 300px ;
+
+   
+  }
+  

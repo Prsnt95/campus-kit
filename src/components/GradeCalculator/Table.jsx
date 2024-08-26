@@ -62,6 +62,7 @@ const Table = (props) => {
 
   const handleInputChange = (index, e) => {
     const { name, value } = e.target;
+    if (value < 0) return; 
     setRows((prev) => {
       const updatedRows = [...prev];
       updatedRows[index] = { ...updatedRows[index], [name]: value };

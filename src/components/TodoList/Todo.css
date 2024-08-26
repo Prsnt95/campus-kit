@@ -13,3 +13,7 @@
 .todo--checkbox{
     padding-left: 0;
 }
+
+.testbtn:hover{
+    cursor:default;
+}
