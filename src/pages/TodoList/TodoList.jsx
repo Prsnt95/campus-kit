@@ -5,41 +5,72 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { Button, TextField } from "@mui/material";
+import dayjs from "dayjs";
 
-
-
-
-// import dayjs from "dayjs";
 const TodoList = () => {
   const [task, setTask] = React.useState("");
   const [deadline, setDeadline] = React.useState(null);
   const [todos, setTodos] = React.useState([]);
   const [filter, setFilter] = React.useState("current");
 
+  // Retrieve todos from localStorage and parse deadlines
+  React.useEffect(() => {
+    const items = JSON.parse(localStorage.getItem("LISTS_OF_TODOS"));
+    if (items) {
+      const parsedTodos = items.map((todo) => {
+        const parsedDeadline = todo.deadline ? dayjs(todo.deadline) : null;
+        console.log(
+          "Parsed deadline:",
+          parsedDeadline,
+          parsedDeadline ? parsedDeadline.isValid() : false
+        );
+        return {
+          ...todo,
+          deadline:
+            parsedDeadline && parsedDeadline.isValid() ? parsedDeadline : null,
+        };
+      });
+      console.log("Parsed todos:", parsedTodos);
+      setTodos(parsedTodos);
+    }
+  }, []);
+
+  // Save todos to localStorage when the todos array changes
+  React.useEffect(() => {
+    if (todos.length > 0) {
+      console.log("Saving todos to localStorage:", todos);
+      localStorage.setItem("LISTS_OF_TODOS", JSON.stringify(todos));
+    } else {
+      localStorage.removeItem("LISTS_OF_TODOS"); // Clear localStorage if todos is empty
+    }
+  }, [todos]);
+
   const handleTaskChange = (e) => {
     setTask(e.target.value);
   };
 
   const handleDeadlineChange = (newDeadline) => {
-    if (newDeadline && !newDeadline.isValid()) {
-      setDeadline(null);
-    } else {
-      setDeadline(newDeadline);
-    }
+    setDeadline(newDeadline && newDeadline.isValid() ? newDeadline : null);
   };
-  const handleClick = (event) => {
 
-    
+  const handleClick = () => {
     if (task && deadline && deadline.isValid()) {
-      setTodos([...todos, { task, deadline }]);
-      setDeadline(null);
+      setTodos([...todos, { task, deadline, completed: false }]);
       setTask("");
+      setDeadline(null);
     }
   };
+
   const toggleComplete = (index) => {
     const updatedTodos = [...todos];
-    updatedTodos[index].completed = !updatedTodos[index].completed; // Toggle the completed status
+    updatedTodos[index].completed = !updatedTodos[index].completed;
     setTodos(updatedTodos);
+  };
+
+  const handleDelete = (index) => {
+    const updatedTodos = todos.filter((_, i) => i !== index);
+    setTodos(updatedTodos);
+    localStorage.setItem("LISTS_OF_TODOS", JSON.stringify(updatedTodos)); // Save immediately after deleting
   };
 
   const filteredTodos = todos.filter((todo) =>
@@ -47,21 +78,14 @@ const TodoList = () => {
   );
 
   const displayMessage = () => {
-    if (filter === "current") {
-      return "You don't have any uncompleted todos.";
-    } else {
-      return "You don't have any completed todos.";
-    }
-  };
-
-  const handleDelete = (index) => {
-    const updatedTodos = todos.filter((_, i) => i !== index);
-    setTodos(updatedTodos);
+    return filter === "current"
+      ? "You don't have any uncompleted todos."
+      : "You don't have any completed todos.";
   };
 
   return (
     <div className="Todo-wrapper">
-      <h1 className="todo-title">TODO's</h1>
+      <h1 className="todo-title">TODO List</h1>
       <div className="inputContainer">
         <TextField
           label="Add a New Task"
@@ -108,7 +132,6 @@ const TodoList = () => {
               deadline={todo.deadline ? todo.deadline.format("YYYY-MM-DD") : ""}
               complete={todo.completed}
               check={() => toggleComplete(originalIndex)} // Pass the original index here
-              deleted={todo.deleted}
               onDelete={() => handleDelete(originalIndex)}
             />
           );
@@ -119,4 +142,5 @@ const TodoList = () => {
     </div>
   );
 };
+
 export default TodoList;

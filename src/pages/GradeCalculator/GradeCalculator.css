@@ -1,7 +1,7 @@
 .allWrapper{
   text-align: center;
   min-height: 100vh;
-  min-width:100vh;
+  min-width:100vw;
   background-color: #F87272;
 
 }
@@ -30,18 +30,22 @@
     /* margin-top: 20px; */
     align-items: center;
     justify-content: center;  
+    flex-direction: column;
   }
   
   .input-div{
     background-color: whitesmoke;
-    width: 400px;
-    height: 500px;
+    width: 350px;
+    height: 450px;
     background-color: rgb(237, 232, 215);
     /* align-items: center; */
     /* justify-content: center; */
     overflow-y: scroll ;
     overflow-x:scroll;
     font-size: small;
+    border: 3px solid black;
+    border-bottom: 0px;
+    border-radius: 50px;
 
   }
   
@@ -123,12 +127,13 @@
   .outputs{
     text-align: center;
     justify-content: center;
+    border: 5px solid black;
+    border-top: 0px;
+    border-radius: 20px;
+
   }
-  
-  .outputs--element{
-    margin:20px;
-    word-spacing: 1px;
-  }
+
+
   .title-wrapper{
     justify-self: center;
   }

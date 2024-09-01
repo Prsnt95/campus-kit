@@ -1,0 +1,161 @@
+
+/* -------------------------------flashCard ----------------------------------------*/
+.flashCard--wrapper{
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+
+  background-color: bisque;
+}
+
+.flashcard--title{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 35px;
+  color:chocolate;
+  text-align: center;
+  background-color: beige;
+  width: 100vw;
+
+}
+
+.cardCollection{
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center; 
+
+  
+}
+
+
+/* ------------------------------ Fcard----------------------------------------*/
+.fcard--wrapper{
+  height: 200px;
+  width: 300px;
+  border: 1px solid black;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* To align elements properly */
+  text-align: center;
+  box-shadow: black 5px 5px;
+  background-color: rgb(248, 228, 202);
+  transition: 0.2s;
+  position: relative; /* Needed for absolute positioning */
+}
+
+
+.fcard--wrapper:hover{
+  cursor: pointer;
+  box-shadow:rgb(250, 131, 155) 5px 5px;
+  transform: scale(1.1);
+  background: rgb(253, 192, 118);
+
+
+
+  
+}
+
+.fcard--title {
+  display: flex;
+  justify-content: space-between; /* Space between name and actions */
+  align-items: center; /* Center items vertically */
+  width: 100%;
+  background-color: rgb(134, 254, 254);
+  padding: 0 10px; /* Adds padding for spacing */
+}
+
+.fcard--actions {
+  display: flex;
+  align-items: center; /* Align buttons vertically */
+}
+
+.fcard--name {
+  margin-right: auto; /* Ensures the name stays on the left */
+}
+
+
+
+
+.fcard--custom-button {
+  background-color:rgb(253, 192, 118);
+  color: rgb(0, 0, 0) !important;
+  padding: 10px 10px !important;
+  border: 2px solid rgb(72, 66, 141) !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
+  width: fit-content !important; /* Adjust width to center properly */
+  height: 20px !important; /* Adjust height to center properly */
+  margin: 10px !important;
+}
+
+.fcard--custom-button:hover {
+  background-color:#d3e896 !important;
+}
+
+.fcard--custom-button p{
+  margin: 0 !important;    
+  font-size: 1rem !important; 
+  font-weight: 500 !important;
+}
+
+.fav-btn{
+  position: absolute;
+  bottom: 10px; /* A little padding from the bottom */
+  right: 10px; /* A little padding from the left */
+  cursor: pointer;
+
+}
+
+.fcard--description{
+  height:61px;
+  overflow: scroll;
+}
+
+/* ---------------Add Card------------ */
+.addcard--wrapper{
+  height: 200px;
+  width: 300px;
+
+  border: 6px dotted #f1f1f1;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* To align elements properly */
+  text-align: center;
+  /* box-shadows: black 5px 5px; */
+  background-color: rgb(241, 231, 218);
+  position: relative;
+
+}
+
+
+.addcard--wrapper:hover{
+  cursor: pointer;
+  background: rgb(134, 132, 130);
+  border:3px dotted rgb(242, 166, 233) ;
+  color: white;
+    transition: 0.2s;
+
+  transform: scale(1.1);
+
+
+}
+
+.addPrompt{
+  display: flex;
+  margin: 30px 0;
+}
+
+.addPrompt:hover{
+  color: rgb(255, 255, 255);
+  transform: scale(1.2);
+}
+
+  

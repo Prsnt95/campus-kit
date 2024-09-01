@@ -1,5 +1,5 @@
 .Todo-wrapper{
-    background-color: rgb(224, 226, 233);
+  background-color: rgb(246, 238, 207);
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -14,6 +14,8 @@
 
 .todo-title{
     padding: 10px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
 }
 .inputContainer {
     text-align: center;

@@ -3,9 +3,12 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import GradeCalculator from "../GradeCalculator/GradeCalculator";
 import TodoList from "../TodoList/TodoList";
+import Flashcard from "../FlashCard/Flashcard";
 // import App from "../../App";
 import LandingPage from "../LandingPage/LandingPage";
 import Pomodoro from "../Pomodoro/Pomodoro";
+import IndividualFlashcard from "../FlashCard/IndividualFlashcard";
+
 export default class NavbarComp extends Component {
   render() {
     return (
@@ -27,11 +30,11 @@ export default class NavbarComp extends Component {
                 <Nav.Link as={Link} to="/pomodoro">
                   Pomodoro
                 </Nav.Link>
-                <Nav.Link as={Link} to="/todo-list">
-                  Course Planner
-                </Nav.Link>
-                <Nav.Link as={Link} to="/todo-list">
+                {/* <Nav.Link as={Link} to="/todo-list">
                   Notes
+                </Nav.Link> */}
+                <Nav.Link as={Link} to="/Flashcard">
+                  FlashCard
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -42,6 +45,8 @@ export default class NavbarComp extends Component {
           <Route path="/todo-list" element={<TodoList />} />
           <Route path="/" element={<LandingPage />} />
           <Route path="/pomodoro" element={<Pomodoro />} />
+          <Route path="/FlashCard" element={<Flashcard />} />
+          <Route path="/flashcard/:id" element={<IndividualFlashcard />} />
         </Routes>
       </Router>
     );

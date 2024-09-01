@@ -13,6 +13,12 @@
     text-align: center;    
 }
 
+.pomo-title{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 25px;
+
+}
+
 .pomo-nav{
     height: 40px;
     width: fit-content;
