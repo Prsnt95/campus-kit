@@ -5,6 +5,7 @@ const Row = ({ grade, assignment, weight, handleInputChange }) => {
     <tr>
       <td>
         <input
+          className="row--input row--assignment"
           type="text"
           name="assignment"
           value={assignment}
@@ -14,6 +15,7 @@ const Row = ({ grade, assignment, weight, handleInputChange }) => {
       </td>
       <td>
         <input
+          className="row--input row--grade"
           type="number"
           name="grade"
           value={grade}
@@ -25,6 +27,7 @@ const Row = ({ grade, assignment, weight, handleInputChange }) => {
       </td>
       <td>
         <input
+          className="row--input row--grade"
           type="number"
           name="weight"
           value={weight}

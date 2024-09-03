@@ -27,16 +27,15 @@
 
   .interactions{
     display: flex;
-    /* margin-top: 20px; */
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;  
-    flex-direction: column;
   }
   
   .input-div{
     background-color: whitesmoke;
     width: 350px;
-    height: 450px;
+    height: 430px;
     background-color: rgb(237, 232, 215);
     /* align-items: center; */
     /* justify-content: center; */
@@ -53,10 +52,11 @@
     padding:10px;
   }
   
-  .Row--inputs{
+  .Table--inputs{
   
     justify-content: center;
     padding:5px;
+
   }
   
   .addRow{
@@ -70,9 +70,18 @@
   }
   
   
-  .Row--inputs{
+  .Table--inputs{
     display: flex;
     flex-direction: column;
+  }
+
+
+  .row--input{
+    width: 80px;
+
+  }
+  .row--assignment{
+    max-width: 110px;
   }
   
   .gradeInput, .weightInput{
@@ -115,7 +124,7 @@
   
   
   .outputs{
-    background-color: rgb(222, 197, 197);
+    /* background-color: rgb(222, 197, 197); */
     width: 300px;;
     height:150px;
     padding:10px;
@@ -127,9 +136,9 @@
   .outputs{
     text-align: center;
     justify-content: center;
-    border: 5px solid black;
-    border-top: 0px;
-    border-radius: 20px;
+    /* border: 5px solid black; */
+    /* border-top: 0px; */
+    /* border-radius: 20px; */
 
   }
 

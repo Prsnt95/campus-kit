@@ -53,7 +53,7 @@ const Table = ({ grades, updateGrades }) => {
   };
 
   return (
-    <section className="Row--inputs">
+    <section className="Table--inputs">
       <table>
         <thead>
           <tr>
