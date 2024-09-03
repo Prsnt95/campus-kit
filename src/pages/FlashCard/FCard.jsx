@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import IconButton from "@mui/material/IconButton";
 import {
@@ -7,10 +7,14 @@ import {
   StarOutline,
   KeyboardDoubleArrowRight,
 } from "@mui/icons-material";
-import { Button } from "@mui/material";
+import { Button, Link } from "@mui/material";
 
-const Fcard = ({ card, onDelete, onEdit }) => {
-  const [isFav, setIsFav] = React.useState(false);
+import EditPopup from "./EditPopup";
+
+const Fcard = ({ card, onDelete, onEdit, section }) => {
+  const [isFav, setIsFav] = useState(false);
+  const [showEdit, setShowEdit] = useState(false);
+
   const favoriteToggle = () => {
     setIsFav(!isFav);
   };
@@ -20,7 +24,12 @@ const Fcard = ({ card, onDelete, onEdit }) => {
   };
 
   const handleEdit = () => {
-    onEdit(card.id);
+    setShowEdit(!showEdit);
+  };
+
+  const handleChange = (newName, newDescription) => {
+    onEdit(card.id, newName, newDescription);
+    setShowEdit(!showEdit);
   };
 
   return (
@@ -28,24 +37,32 @@ const Fcard = ({ card, onDelete, onEdit }) => {
       <div className="fcard--title">
         <h3 className="fcard--name">{card.name}</h3>
         <div className="fcard--actions">
-          <IconButton aria-label="edit card">
-            <Edit onClick={handleEdit} />
+          <IconButton aria-label="edit card" onClick={handleEdit}>
+            <Edit />
           </IconButton>
           <IconButton aria-label="delete card" onClick={handleDelete}>
             <DeleteIcon />
           </IconButton>
         </div>
       </div>
-      <div className="fcard--description">
-        <p>{card.description}</p>
-      </div>
+      {showEdit ? (
+        <EditPopup card={card} handleChange={handleChange} />
+      ) : (
+        <div>
+          <div className="fcard--description">
+            <p>{card.description}</p>
+          </div>
 
-      <Button variant="ringHover" className="fcard--custom-button">
-        <p>
-          Learn
-          <KeyboardDoubleArrowRight></KeyboardDoubleArrowRight>
-        </p>
-      </Button>
+          <Link to={`/flashcard/${section}/${card.id}`}>
+            <Button variant="contained" className="fcard--custom-button">
+              <p>
+                Learn
+                <KeyboardDoubleArrowRight></KeyboardDoubleArrowRight>
+              </p>
+            </Button>
+          </Link>
+        </div>
+      )}
 
       <div onClick={favoriteToggle} className="fav-btn">
         {isFav ? (

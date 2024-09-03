@@ -82,7 +82,7 @@
 
 
 .fcard--custom-button {
-  background-color:rgb(253, 192, 118);
+  background-color:rgb(253, 192, 118) !important;
   color: rgb(0, 0, 0) !important;
   padding: 10px 10px !important;
   border: 2px solid rgb(72, 66, 141) !important;

@@ -10,9 +10,10 @@ const Flashcard = () => {
   const handleCardAdd = () => {
     const newCard = {
       id: nextId,
-      name: "Name",
+      name: "Title",
       description: "Add Description",
     };
+
     setCards([...cards, newCard]);
     setNextId(nextId + 1);
   };
@@ -25,7 +26,7 @@ const Flashcard = () => {
     setCards(
       cards.map((card) =>
         card.id === id
-          ? { ...card, name: "newName", description: "newDescription" }
+          ? { ...card, name: newName, description: newDescription }
           : card
       )
     );
