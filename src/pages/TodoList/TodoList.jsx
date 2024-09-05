@@ -1,6 +1,6 @@
 import React from "react";
 import Todo from "./Todo";
-import "./TodoList.css";
+import "../../styles/TodoList.css";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
@@ -19,18 +19,12 @@ const TodoList = () => {
     if (items) {
       const parsedTodos = items.map((todo) => {
         const parsedDeadline = todo.deadline ? dayjs(todo.deadline) : null;
-        console.log(
-          "Parsed deadline:",
-          parsedDeadline,
-          parsedDeadline ? parsedDeadline.isValid() : false
-        );
         return {
           ...todo,
           deadline:
             parsedDeadline && parsedDeadline.isValid() ? parsedDeadline : null,
         };
       });
-      console.log("Parsed todos:", parsedTodos);
       setTodos(parsedTodos);
     }
   }, []);
@@ -38,7 +32,6 @@ const TodoList = () => {
   // Save todos to localStorage when the todos array changes
   React.useEffect(() => {
     if (todos.length > 0) {
-      console.log("Saving todos to localStorage:", todos);
       localStorage.setItem("LISTS_OF_TODOS", JSON.stringify(todos));
     } else {
       localStorage.removeItem("LISTS_OF_TODOS"); // Clear localStorage if todos is empty

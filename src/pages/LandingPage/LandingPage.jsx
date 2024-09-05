@@ -1,8 +1,8 @@
 import React from "react";
-import "./LandingPage.css";
-import calculatorImage from "../Resources/calculator-img.png";
-import todoImg from "../Resources/TodoImg.png";
-import pomodoro from "../Resources/pomodoro.png";
+import "../../styles/LandingPage.css";
+import calculatorImage from "../../Resources/calculator-img.png";
+import todoImg from "../../Resources/TodoImg.png";
+import pomodoro from "../../Resources/pomodoro.png";
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {

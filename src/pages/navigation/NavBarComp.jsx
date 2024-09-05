@@ -7,7 +7,7 @@ import Flashcard from "../FlashCard/Flashcard";
 // import App from "../../App";
 import LandingPage from "../LandingPage/LandingPage";
 import Pomodoro from "../Pomodoro/Pomodoro";
-import IndividualFlashcard from "../FlashCard/IndividualFlashcard";
+import SectionPage from "../FlashCard/SectionPage";
 
 export default class NavbarComp extends Component {
   render() {
@@ -46,7 +46,7 @@ export default class NavbarComp extends Component {
           <Route path="/" element={<LandingPage />} />
           <Route path="/pomodoro" element={<Pomodoro />} />
           <Route path="/FlashCard" element={<Flashcard />} />
-          <Route path="/flashcard/:id" element={<IndividualFlashcard />} />
+          <Route path="/flashcard/:section/:id" element={<SectionPage />} />
         </Routes>
       </Router>
     );

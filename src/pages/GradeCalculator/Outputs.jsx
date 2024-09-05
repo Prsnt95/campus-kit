@@ -29,13 +29,15 @@ const Outputs = ({ grades }) => {
       <h3>Results</h3>
       <p className="outputs--element">
         Average Grade:{" "}
-        <span style={{ fontWeight: "bold", color: "blue" }}>
-          {averageGrade.toFixed(2)} %
-        </span>
+        <h4>
+          <span style={{ fontWeight: "bold", color: "black" }}>
+            {averageGrade.toFixed(2)} %
+          </span>
+        </h4>
       </p>
       <p className="outputs--element">
         Total Weight:{" "}
-        <span style={{ fontWeight: "bold", color: "blue" }}>
+        <span style={{ fontWeight: "bold", color: "Black" }}>
           {totalWeight.toFixed(2)} %
         </span>
       </p>

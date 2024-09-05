@@ -1,5 +1,4 @@
-import { React, useState } from "react";
-
+import { useState } from "react";
 export default function EditPopup({ card, handleChange }) {
   const [cardTitle, setCardTitle] = useState(card.name);
   const [cardDes, setCardDes] = useState(card.description);
@@ -28,7 +27,7 @@ export default function EditPopup({ card, handleChange }) {
         onChange={handleDesChange}
       ></input>
       <div>
-        <button onClick={handleSubmit}>Submit Edit</button>
+        <button onClick={handleSubmit} className="submit-btn">Submit Edit</button>
       </div>
     </div>
   );

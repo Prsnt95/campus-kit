@@ -163,6 +163,21 @@
     }
   }
   
-  .buttons{
-    margin-top: none;
+  .GradeCalc--buttons{
+    margin: 2px;
+  }
+
+  .GradeCalc--button{
+    margin: 2px;
+    padding: 2px;
+
+    background-color: black;
+    border:none;
+  }
+
+  .GradeCalc--button:hover{
+    margin: 2px;
+    padding: 2px;
+
+    background-color: rgb(144, 55, 55);
   }

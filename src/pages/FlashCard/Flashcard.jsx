@@ -1,6 +1,6 @@
-import { React, useState } from "react";
+import { useState, useEffect } from "react";
 import Fcard from "./FCard";
-import "./Flashcard.css";
+import "../../styles/Flashcard.css";
 import AddCard from "./AddCard";
 
 const Flashcard = () => {
@@ -31,6 +31,23 @@ const Flashcard = () => {
       )
     );
   };
+  useEffect(() => {
+    const storedCards = localStorage.getItem("LISTS_OF_Cards");
+    console.log("Stored cards:", storedCards);
+    if (storedCards) {
+      const parsedCards = JSON.parse(storedCards);
+      if (parsedCards.length > 0) {
+        // Only set cards if there are stored cards
+        setCards(parsedCards);
+        setNextId(Math.max(...parsedCards.map((card) => card.id)) + 1);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log("Saving cards:", cards);
+    localStorage.setItem("LISTS_OF_Cards", JSON.stringify(cards));
+  }, [cards]);
 
   return (
     <div className="flashCard--wrapper">
@@ -44,6 +61,7 @@ const Flashcard = () => {
             card={card}
             onDelete={handleCardDelete}
             onEdit={handleCardEdit}
+            section={card.name}
           />
         ))}
         <AddCard handleCardClick={handleCardAdd} />

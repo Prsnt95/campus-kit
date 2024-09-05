@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./GradeCalculator.css";
+import "../../styles/GradeCalculator.css";
 import Grade from "./Grade";
+import { Button } from "react-bootstrap";
+import "../../styles/GradeCalculator.css";
 
 const GradeCalculator = () => {
   const [calculators, setCalculators] = useState([]);
@@ -72,9 +74,13 @@ const GradeCalculator = () => {
           />
         ))}
       </div>
-      <div className="buttons">
-        <button onClick={addCalculator}>Add calculator</button>
-        <button onClick={deleteCalculator}>Delete calculator</button>
+      <div className="GradeCalc--buttons">
+        <Button onClick={addCalculator} className="GradeCalc--button">
+          Add calculator
+        </Button>
+        <Button onClick={deleteCalculator} className="GradeCalc--button">
+          Delete calculator
+        </Button>
       </div>
     </div>
   );

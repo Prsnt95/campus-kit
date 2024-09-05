@@ -1,5 +1,5 @@
 import React from "react";
-import "./Pomodoro.css";
+import "../../styles/Pomodoro.css";
 
 const Pomodoro = () => {
   const time = 25;

@@ -7,14 +7,13 @@ import {
   StarOutline,
   KeyboardDoubleArrowRight,
 } from "@mui/icons-material";
-import { Button, Link } from "@mui/material";
-
+import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 import EditPopup from "./EditPopup";
 
 const Fcard = ({ card, onDelete, onEdit, section }) => {
   const [isFav, setIsFav] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
-
   const favoriteToggle = () => {
     setIsFav(!isFav);
   };

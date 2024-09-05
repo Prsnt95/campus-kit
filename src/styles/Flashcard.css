@@ -30,7 +30,6 @@
   
 }
 
-
 /* ------------------------------ Fcard----------------------------------------*/
 .fcard--wrapper{
   height: 200px;
@@ -54,8 +53,6 @@
   box-shadow:rgb(250, 131, 155) 5px 5px;
   transform: scale(1.1);
   background: rgb(253, 192, 118);
-
-
 
   
 }
@@ -115,6 +112,7 @@
 .fcard--description{
   height:61px;
   overflow: scroll;
+  padding: 5px;
 }
 
 /* ---------------Add Card------------ */
@@ -159,3 +157,43 @@
 }
 
   
+/* ---------------Popup--------------------------- */
+
+.submit-btn{
+  background-color:rgb(253, 192, 118);
+
+  margin: 10px;
+}
+.submit-btn:hover{
+  background-color:#d3e896 ;
+}
+
+
+
+
+/* ------------------------ Section Page------------------------- */
+
+.sectionPage--wrapper{
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color:bisque;
+  display: flex;
+  flex-direction: column;
+
+}
+.sectionPage--header{
+  display: flex;
+
+}
+
+.sectionPage--flashcard{
+  width: 500px !important;
+  height: 100px !important;
+  background-color: rgb(188, 129, 52) !important;
+
+}
+.sectionPage--addCards{
+  width: 100px;
+  background-color:cornsilk;
+
+}
