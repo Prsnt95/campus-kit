@@ -179,21 +179,37 @@
   background-color:bisque;
   display: flex;
   flex-direction: column;
-
 }
 .sectionPage--header{
   display: flex;
 
 }
 
+.sectionPage--flashcardWrapper{
+    height:60vh;
+    width:100vw;
+    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .sectionPage--flashcard{
-  width: 500px !important;
-  height: 100px !important;
-  background-color: rgb(188, 129, 52) !important;
+  height: 200px;
+  width: 300px;
+  border: 1px solid black;
+  margin: 20px;
+  display: flex;
 
 }
 .sectionPage--addCards{
-  width: 100px;
-  background-color:cornsilk;
+
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  gap: 10px;
+  width: 100%;
+  /* background-color:cornsilk; */
 
 }
+
