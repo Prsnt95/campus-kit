@@ -33,18 +33,17 @@
   }
   
   .input-div{
-    background-color: whitesmoke;
     width: 350px;
-    height: 430px;
-    background-color: rgb(237, 232, 215);
+    height: 450px;
+    background-color: antiquewhite;
     /* align-items: center; */
     /* justify-content: center; */
     overflow-y: scroll ;
     overflow-x:scroll;
     font-size: small;
     border: 3px solid black;
-    border-bottom: 0px;
-    border-radius: 50px;
+    /* border-bottom: 0px; */
+    /* border-radius: 50px; */
 
   }
   
@@ -53,7 +52,6 @@
   }
   
   .Table--inputs{
-  
     justify-content: center;
     padding:5px;
 
@@ -78,7 +76,10 @@
 
   .row--input{
     width: 80px;
-
+    /* background-color: #9ca19e; */
+    /* color:white; */
+    /* font-family:cursive; */
+    font-size: larger;
   }
   .row--assignment{
     max-width: 110px;
@@ -125,7 +126,7 @@
   
   .outputs{
     /* background-color: rgb(222, 197, 197); */
-    width: 300px;;
+    /* width: 300px;; */
     height:150px;
     padding:10px;
   
