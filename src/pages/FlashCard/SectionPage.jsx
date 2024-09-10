@@ -1,8 +1,15 @@
 import { Link, useParams } from "react-router-dom";
-import ReplyRoundedIcon from "@mui/icons-material/ReplyRounded";
-import { TextField, Card } from "@mui/material";
+import { TextField, Card, IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
-import LoopIcon from "@mui/icons-material/Loop";
+import {
+  ReplyRounded,
+  Loop,
+  ThumbUpOutlined,
+  ThumbDownOutlined,
+  ArrowBack,
+  ArrowForward,
+} from "@mui/icons-material";
+
 const SectionPage = () => {
   const { section, id } = useParams();
 
@@ -35,32 +42,52 @@ const SectionPage = () => {
 
   return (
     <div className="sectionPage--wrapper">
-      <div className="sectionPage--header">
-        <Link to={`/Flashcard`}>
-          <ReplyRoundedIcon />
+      <div className="sectionPage--nav">
+        <Link to={`/Flashcard`} className="backLink">
+          <ReplyRounded className="backIcon" />
+          <p>Back</p>
         </Link>
-        Flashcards
-        <h1>{section}</h1>
-        <p>Card ID: {id}</p>
+        <h1 className="sectionTitle">{section}</h1>
       </div>
-      <div className="sectionPage--flashcardWrapper">
-        <div className="sectionPage--flashcard">
-          <LoopIcon />
+      <div className="sectionPage--rest">
+        <div className="sectionPage--flashcardWrapper">
+          <div className="sectionPage--flashcard">
+            <IconButton className="flipIcon">
+              <Loop className="loopIcon" />
+            </IconButton>
+          </div>
+          <div className="sectionPage--flashcardControl">
+            <IconButton>
+              <ArrowBack />
+            </IconButton>
+            <span>
+              <IconButton className="thumbUpIcon">
+                <ThumbUpOutlined />
+              </IconButton>
+              <IconButton className="thumbDownIcon">
+                <ThumbDownOutlined />
+              </IconButton>
+            </span>
+            <IconButton>
+              <ArrowForward />
+            </IconButton>
+          </div>
+          <p>1 of 10</p>
         </div>
+        <form onSubmit={handleSubmit} className="sectionPage--addCards">
+          <TextField name="front" placeholder="Front" required />
+          <TextField name="back" placeholder="Back" required />
+          <button type="submit">Add Card</button>
+        </form>
+        {flashcards.map((flashcard, index) => (
+          <div key={index}>
+            <Card>
+              <strong>Front: </strong> {flashcard.front}" "
+              <strong>Back: </strong> {flashcard.back}
+            </Card>
+          </div>
+        ))}
       </div>
-      <form onSubmit={handleSubmit} className="sectionPage--addCards">
-        <TextField name="front" placeholder="Front" required />
-        <TextField name="back" placeholder="Back" required />
-        <button type="submit">Add Card</button>
-      </form>
-      {flashcards.map((flashcard, index) => (
-        <div key={index}>
-          <Card>
-            <strong>Front: </strong> {flashcard.front}" "<strong>Back: </strong>{" "}
-            {flashcard.back}
-          </Card>
-        </div>
-      ))}
     </div>
   );
 };

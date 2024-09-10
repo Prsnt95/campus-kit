@@ -55,7 +55,7 @@ const Fcard = ({ card, onDelete, onEdit, section }) => {
           <Link to={`/flashcard/${section}/${card.id}`}>
             <Button variant="contained" className="fcard--custom-button">
               <p>
-                Learn
+                Study
                 <KeyboardDoubleArrowRight></KeyboardDoubleArrowRight>
               </p>
             </Button>

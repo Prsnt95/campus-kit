@@ -18,6 +18,7 @@
   text-align: center;
   background-color: beige;
   width: 100vw;
+  height: 50px;
 
 }
 
@@ -133,7 +134,6 @@
 
 }
 
-
 .addcard--wrapper:hover{
   cursor: pointer;
   background: rgb(134, 132, 130);
@@ -172,7 +172,6 @@
 
 
 /* ------------------------ Section Page------------------------- */
-
 .sectionPage--wrapper{
   min-width: 100vw;
   min-height: 100vh;
@@ -180,26 +179,75 @@
   display: flex;
   flex-direction: column;
 }
-.sectionPage--header{
+.sectionPage--nav{
   display: flex;
-
+  background-color: beige;
+  /* justify-content: space-between; */
+  /* margin: 10px; */
 }
+
+
+.backLink{
+  color: black;
+  text-decoration: None;
+  display: flex;
+  font-weight: 600;
+  height: fit-content;
+  right: 0;
+}
+
+.sectionTitle{
+  margin: auto;
+  font-weight: 600;
+
+  
+}
+.backLink:hover{
+  color: rgb(141, 124, 124);
+}
+
+
+.sectionPage--rest{
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 .sectionPage--flashcardWrapper{
-    height:60vh;
-    width:100vw;
-    border: 2px solid red;
+    /* height:450px; */
+    /* width:600px; */
+    /* border: 2px solid red; */
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* background-color: rgb(244, 159, 56); */
+    margin: 10px;
+
 }
 
+
 .sectionPage--flashcard{
-  height: 200px;
-  width: 300px;
+  height: 270px;
+  width: 400px;
   border: 1px solid black;
-  margin: 20px;
-  display: flex;
+  box-shadow: black 5px 5px;
+  background-color: rgb(253, 192, 118);
+  position: relative; /* Needed for absolute positioning */
+}
+
+.flipIcon{
+  position: absolute !important;
+  bottom:0px;
+  right:0px;
+}
+
+.loopIcon{
+  height: 40px !important;
+  width: 40px !important;
+  color: rgb(146, 177, 177);
 
 }
 .sectionPage--addCards{
@@ -213,3 +261,24 @@
 
 }
 
+
+.sectionPage--flashcardControl{
+  display: flex;
+  width:350px;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.thumbDownIcon{
+  border: 1px solid red !important;
+  border-radius: 0px !important;
+  color: red !important;
+  background-color: black;
+}
+.thumbUpIcon{
+  border: 1px solid green !important;
+  border-radius: 0px !important;
+  color: green !important;
+  background-color: black;
+}
