@@ -236,7 +236,16 @@
   box-shadow: black 5px 5px;
   background-color: rgb(253, 192, 118);
   position: relative; /* Needed for absolute positioning */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.sectionPage--flashcard:hover{
+  cursor: pointer;
+}
+
 
 .flipIcon{
   position: absolute !important;
@@ -282,3 +291,42 @@
   color: green !important;
   background-color: black;
 }
+
+table{
+  width: 30%;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 10px;
+    text-align: center;
+
+}
+
+th{
+  background-color: aliceblue;
+padding: 7px;
+}
+td{
+  background-color: rgb(151, 241, 241);
+  /* word-wrap: break-word  */
+  padding:4px
+}
+
+.sectionPage--editIcon, .sectionPage--deleteIcon{
+color: black !important;
+}
+
+.sectionPage--editIcon:hover{
+  cursor: pointer;
+  color: blue !important;
+  }
+
+
+.sectionPage--deleteIcon:hover{
+  cursor: pointer;
+  color: red !important;
+  }

@@ -1,6 +1,8 @@
 import { Link, useParams } from "react-router-dom";
-import { TextField, Card, IconButton } from "@mui/material";
+import { TextField, IconButton } from "@mui/material";
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid"; // Import uuid for generating unique IDs
+import { Edit, Delete } from "@mui/icons-material";
 import {
   ReplyRounded,
   Loop,
@@ -12,18 +14,54 @@ import {
 
 const SectionPage = () => {
   const { section, id } = useParams();
-
   const [flashcards, setFlashCards] = useState([]);
+  const [formValues, setFormValues] = useState({ front: "", back: "" }); // Form values
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [side, setSide] = useState("front");
+  const [showList, setShowList] = useState(true);
+
+  const handleShowList = () => {
+    setShowList(!showList);
+  };
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+  const handleNext = () => {
+    if (currentIndex < flashcards.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+      setSide("front");
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const newFlashcard = {
+      id: uuidv4(),
       front: formData.get("front"),
       back: formData.get("back"),
     };
-    setFlashCards((prev) => [...prev, newFlashcard]);
+
+    setFlashCards((prev) => [...prev, newFlashcard]); // Add new flashcard
+
+    setFormValues({ front: "", back: "" }); // Reset form values
     e.target.reset(); // Clear form after submission
+  };
+
+  const handleFlip = () => {
+    setSide((prevSide) => (prevSide === "front" ? "back" : "front"));
+  };
+
+  const handleDelete = (id) => {
+    const updatedFlashcards = flashcards.filter((flashcard) => {
+      return flashcard.id !== id;
+    });
+    setFlashCards(updatedFlashcards);
+    if (currentIndex >= updatedFlashcards.length) {
+      setCurrentIndex(Math.max(0, flashcards.length - 2));
+    }
   };
 
   useEffect(() => {
@@ -51,13 +89,18 @@ const SectionPage = () => {
       </div>
       <div className="sectionPage--rest">
         <div className="sectionPage--flashcardWrapper">
-          <div className="sectionPage--flashcard">
+          <div className="sectionPage--flashcard" onClick={handleFlip}>
+            {flashcards.length > 0 ? (
+              <h3>{flashcards[currentIndex][side]}</h3>
+            ) : (
+              <h3>Add Cards To Begin</h3>
+            )}
             <IconButton className="flipIcon">
               <Loop className="loopIcon" />
             </IconButton>
           </div>
           <div className="sectionPage--flashcardControl">
-            <IconButton>
+            <IconButton onClick={handlePrev}>
               <ArrowBack />
             </IconButton>
             <span>
@@ -68,25 +111,68 @@ const SectionPage = () => {
                 <ThumbDownOutlined />
               </IconButton>
             </span>
-            <IconButton>
+            <IconButton onClick={handleNext}>
               <ArrowForward />
             </IconButton>
           </div>
-          <p>1 of 10</p>
+          <p>
+            {flashcards.length > 0
+              ? `${currentIndex + 1} of ${flashcards.length}`
+              : "No cards"}
+          </p>
         </div>
         <form onSubmit={handleSubmit} className="sectionPage--addCards">
-          <TextField name="front" placeholder="Front" required />
-          <TextField name="back" placeholder="Back" required />
-          <button type="submit">Add Card</button>
+          <TextField
+            name="front"
+            placeholder="Front"
+            value={formValues.front}
+            onChange={(e) =>
+              setFormValues({ ...formValues, front: e.target.value })
+            }
+            required
+          />
+          <TextField
+            name="back"
+            placeholder="Back"
+            value={formValues.back}
+            onChange={(e) =>
+              setFormValues({ ...formValues, back: e.target.value })
+            }
+            required
+          />
+          <button type="submit">Add</button>
         </form>
-        {flashcards.map((flashcard, index) => (
-          <div key={index}>
-            <Card>
-              <strong>Front: </strong> {flashcard.front}" "
-              <strong>Back: </strong> {flashcard.back}
-            </Card>
-          </div>
-        ))}
+        <button onClick={handleShowList}>
+          {showList ? "Hide List" : "Show List"}
+        </button>
+        {showList ? (
+          <table>
+            <thead>
+              <tr>
+                <th>Front</th>
+                <th>Back</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {flashcards.map((flashcard) => (
+                <tr key={flashcard.id}>
+                  <td>{flashcard.front}</td>
+                  <td>{flashcard.back}</td>
+                  <td>
+                    <Edit className="sectionPage--editIcon" />
+                    <Delete
+                      className="sectionPage--deleteIcon"
+                      onClick={() => handleDelete(flashcard.id)}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <div></div>
+        )}
       </div>
     </div>
   );
