@@ -42,7 +42,7 @@
   align-items: center;
   justify-content: space-between; /* To align elements properly */
   text-align: center;
-  box-shadow: black 5px 5px;
+  box-shadow: black 05px 5px;
   background-color: rgb(248, 228, 202);
   transition: 0.2s;
   position: relative; /* Needed for absolute positioning */
@@ -217,41 +217,19 @@
 
 
 .sectionPage--flashcardWrapper{
-    /* height:450px; */
-    /* width:600px; */
-    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     align-items: center;
     /* background-color: rgb(244, 159, 56); */
     margin: 10px;
+    perspective: 1000px;
+    position: relative;
+    transform-style: preserve-3d; /* Preserve 3D effect */
+    transition: transform 0.6s; /* Animation duration */
+  
 
 }
 
-
-.sectionPage--flashcard{
-  height: 270px;
-  width: 400px;
-  border: 1px solid black;
-  box-shadow: black 5px 5px;
-  background-color: rgb(253, 192, 118);
-  position: relative; /* Needed for absolute positioning */
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sectionPage--flashcard:hover{
-  cursor: pointer;
-}
-
-
-.flipIcon{
-  position: absolute !important;
-  bottom:0px;
-  right:0px;
-}
 
 .loopIcon{
   height: 40px !important;
@@ -259,8 +237,63 @@
   color: rgb(146, 177, 177);
 
 }
-.sectionPage--addCards{
 
+
+
+.sectionPage--flashcard {
+  height: 270px;
+  width: 400px;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.sectionPage--flashcard.is-flipped {
+  transform: rotateX(180deg);
+}
+
+.flashcard-inner {
+  position: relative;
+  height: 270px;
+  width: 400px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flashcard-front, .flashcard-back {
+  position: absolute;
+  height: 270px;
+  width: 400px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  box-shadow: black 5px 5px;
+}
+
+.flashcard-front {
+  background-color: rgb(253, 192, 118);
+}
+
+.flashcard-back {
+  background-color: aqua;
+  transform: rotateX(180deg);
+}
+
+.flipIcon {
+  position: absolute !important;
+  bottom: 10px !important;
+  right: 10px !important;
+  /* z-index: 2 !important; */
+}
+
+
+
+.sectionPage--addCards{
+  margin: 10px;
   display: flex;
   justify-content: center;
   margin: 10px;
@@ -312,8 +345,8 @@ padding: 7px;
 }
 td{
   background-color: rgb(151, 241, 241);
-  /* word-wrap: break-word  */
-  padding:4px
+  word-wrap: break-word;
+  padding:3px;
 }
 
 .sectionPage--editIcon, .sectionPage--deleteIcon{
@@ -330,3 +363,6 @@ color: black !important;
   cursor: pointer;
   color: red !important;
   }
+
+
+  

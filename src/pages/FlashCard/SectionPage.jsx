@@ -89,12 +89,29 @@ const SectionPage = () => {
       </div>
       <div className="sectionPage--rest">
         <div className="sectionPage--flashcardWrapper">
-          <div className="sectionPage--flashcard" onClick={handleFlip}>
-            {flashcards.length > 0 ? (
-              <h3>{flashcards[currentIndex][side]}</h3>
-            ) : (
-              <h3>Add Cards To Begin</h3>
-            )}
+          <div
+            className={`sectionPage--flashcard ${
+              side === "back" ? "is-flipped" : ""
+            }`}
+            onClick={handleFlip}
+          >
+            <div className="flashcard-inner">
+              <div className="flashcard-front">
+                <h3>
+                  {flashcards.length > 0
+                    ? flashcards[currentIndex].front
+                    : "Add Cards To Begin"}
+                </h3>
+              </div>
+              <div className="flashcard-back">
+                <p>
+                  {flashcards.length > 0
+                    ? flashcards[currentIndex].back
+                    : "Add content for front and back of the card."}
+                </p>
+              </div>
+            </div>
+
             <IconButton className="flipIcon">
               <Loop className="loopIcon" />
             </IconButton>

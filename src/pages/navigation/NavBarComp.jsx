@@ -9,6 +9,8 @@ import LandingPage from "../LandingPage/LandingPage";
 import Pomodoro from "../Pomodoro/Pomodoro";
 import SectionPage from "../FlashCard/SectionPage";
 
+import "../../styles/NavBarComp.css";
+
 export default class NavbarComp extends Component {
   render() {
     return (
@@ -21,6 +23,9 @@ export default class NavbarComp extends Component {
                 <Nav.Link as={Link} to="/">
                   Home
                 </Nav.Link>
+                <Nav.Link as={Link} to="/Flashcard">
+                  Flashcards
+                </Nav.Link>
                 <Nav.Link as={Link} to="/grade-calculator">
                   Grade Calculator
                 </Nav.Link>
@@ -28,14 +33,11 @@ export default class NavbarComp extends Component {
                   ToDoList
                 </Nav.Link>
                 <Nav.Link as={Link} to="/pomodoro">
-                  Pomodoro
+                  [Under-Construction]
                 </Nav.Link>
                 {/* <Nav.Link as={Link} to="/todo-list">
                   Notes
                 </Nav.Link> */}
-                <Nav.Link as={Link} to="/Flashcard">
-                  FlashCard
-                </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>

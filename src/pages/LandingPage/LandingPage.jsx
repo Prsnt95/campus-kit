@@ -3,13 +3,30 @@ import "../../styles/LandingPage.css";
 import calculatorImage from "../../Resources/calculator-img.png";
 import todoImg from "../../Resources/TodoImg.png";
 import pomodoro from "../../Resources/pomodoro.png";
+import flashcards from "../../Resources/flashcards.png";
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
     <div className="LandingPage_wrapper">
+      <h1 className="landingPage--title">Campuskit</h1>
       <span class="current_text">Current Resources:</span>
       <div class="card__container">
+        <article class="card__article">
+          <Link to="/Flashcard">
+            <img src={flashcards} alt="img" class="card__img" />
+
+            <div class="card__data">
+              <span class="card__description">
+                Create and study flashcards to improve your learning and
+                retention of various subjects.
+              </span>
+              <h2 class="card__title">Flashcards</h2>
+              {/* <a href="#" class="card__button">Read More</a> */}
+            </div>
+          </Link>
+        </article>
+
         <article class="card__article">
           <Link to="/grade-calculator">
             <img
