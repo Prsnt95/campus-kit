@@ -1,0 +1,368 @@
+
+/* -------------------------------flashCard ----------------------------------------*/
+.flashCard--wrapper{
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+
+  background-color: bisque;
+}
+
+.flashcard--title{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 35px;
+  color:chocolate;
+  text-align: center;
+  background-color: beige;
+  width: 100vw;
+  height: 50px;
+
+}
+
+.cardCollection{
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center; 
+
+  
+}
+
+/* ------------------------------ Fcard----------------------------------------*/
+.fcard--wrapper{
+  height: 200px;
+  width: 300px;
+  border: 1px solid black;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* To align elements properly */
+  text-align: center;
+  box-shadow: black 05px 5px;
+  background-color: rgb(248, 228, 202);
+  transition: 0.2s;
+  position: relative; /* Needed for absolute positioning */
+}
+
+
+.fcard--wrapper:hover{
+  cursor: pointer;
+  box-shadow:rgb(250, 131, 155) 5px 5px;
+  transform: scale(1.1);
+  background: rgb(253, 192, 118);
+
+  
+}
+
+.fcard--title {
+  display: flex;
+  justify-content: space-between; /* Space between name and actions */
+  align-items: center; /* Center items vertically */
+  width: 100%;
+  background-color: rgb(134, 254, 254);
+  padding: 0 10px; /* Adds padding for spacing */
+}
+
+.fcard--actions {
+  display: flex;
+  align-items: center; /* Align buttons vertically */
+}
+
+.fcard--name {
+  margin-right: auto; /* Ensures the name stays on the left */
+}
+
+
+
+
+.fcard--custom-button {
+  background-color:rgb(253, 192, 118) !important;
+  color: rgb(0, 0, 0) !important;
+  padding: 10px 10px !important;
+  border: 2px solid rgb(72, 66, 141) !important;
+  border-radius: 5px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
+  width: fit-content !important; /* Adjust width to center properly */
+  height: 20px !important; /* Adjust height to center properly */
+  margin: 10px !important;
+}
+
+.fcard--custom-button:hover {
+  background-color:#d3e896 !important;
+}
+
+.fcard--custom-button p{
+  margin: 0 !important;    
+  font-size: 1rem !important; 
+  font-weight: 500 !important;
+}
+
+.fav-btn{
+  position: absolute;
+  bottom: 10px; /* A little padding from the bottom */
+  right: 10px; /* A little padding from the left */
+  cursor: pointer;
+
+}
+
+.fcard--description{
+  height:61px;
+  overflow: scroll;
+  padding: 5px;
+}
+
+/* ---------------Add Card------------ */
+.addcard--wrapper{
+  height: 200px;
+  width: 300px;
+
+  border: 6px dotted #f1f1f1;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* To align elements properly */
+  text-align: center;
+  /* box-shadows: black 5px 5px; */
+  background-color: rgb(241, 231, 218);
+  position: relative;
+
+}
+
+.addcard--wrapper:hover{
+  cursor: pointer;
+  background: rgb(134, 132, 130);
+  border:3px dotted rgb(242, 166, 233) ;
+  color: white;
+    transition: 0.2s;
+
+  transform: scale(1.1);
+
+
+}
+
+.addPrompt{
+  display: flex;
+  margin: 30px 0;
+}
+
+.addPrompt:hover{
+  color: rgb(255, 255, 255);
+  transform: scale(1.2);
+}
+
+  
+/* ---------------Popup--------------------------- */
+
+.submit-btn{
+  background-color:rgb(253, 192, 118);
+
+  margin: 10px;
+}
+.submit-btn:hover{
+  background-color:#d3e896 ;
+}
+
+
+
+
+/* ------------------------ Section Page------------------------- */
+.sectionPage--wrapper{
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color:bisque;
+  display: flex;
+  flex-direction: column;
+}
+.sectionPage--nav{
+  display: flex;
+  background-color: beige;
+  /* justify-content: space-between; */
+  /* margin: 10px; */
+}
+
+
+.backLink{
+  color: black;
+  text-decoration: None;
+  display: flex;
+  font-weight: 600;
+  height: fit-content;
+  right: 0;
+}
+
+.sectionTitle{
+  margin: auto;
+  font-weight: 600;
+
+  
+}
+.backLink:hover{
+  color: rgb(141, 124, 124);
+}
+
+
+.sectionPage--rest{
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.sectionPage--flashcardWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: rgb(244, 159, 56); */
+    margin: 10px;
+    perspective: 1000px;
+    position: relative;
+    transform-style: preserve-3d; /* Preserve 3D effect */
+    transition: transform 0.6s; /* Animation duration */
+  
+
+}
+
+
+.loopIcon{
+  height: 40px !important;
+  width: 40px !important;
+  color: rgb(146, 177, 177);
+
+}
+
+
+
+.sectionPage--flashcard {
+  height: 270px;
+  width: 400px;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.sectionPage--flashcard.is-flipped {
+  transform: rotateX(180deg);
+}
+
+.flashcard-inner {
+  position: relative;
+  height: 270px;
+  width: 400px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flashcard-front, .flashcard-back {
+  position: absolute;
+  height: 270px;
+  width: 400px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  box-shadow: black 5px 5px;
+}
+
+.flashcard-front {
+  background-color: rgb(253, 192, 118);
+}
+
+.flashcard-back {
+  background-color: aqua;
+  transform: rotateX(180deg);
+}
+
+.flipIcon {
+  position: absolute !important;
+  bottom: 10px !important;
+  right: 10px !important;
+  /* z-index: 2 !important; */
+}
+
+
+
+.sectionPage--addCards{
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  gap: 10px;
+  width: 100%;
+  /* background-color:cornsilk; */
+
+}
+
+
+.sectionPage--flashcardControl{
+  display: flex;
+  width:350px;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.thumbDownIcon{
+  border: 1px solid red !important;
+  border-radius: 0px !important;
+  color: red !important;
+  background-color: black;
+}
+.thumbUpIcon{
+  border: 1px solid green !important;
+  border-radius: 0px !important;
+  color: green !important;
+  background-color: black;
+}
+
+table{
+  width: 30%;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 10px;
+    text-align: center;
+
+}
+
+th{
+  background-color: aliceblue;
+padding: 7px;
+}
+td{
+  background-color: rgb(151, 241, 241);
+  word-wrap: break-word;
+  padding:3px;
+}
+
+.sectionPage--editIcon, .sectionPage--deleteIcon{
+color: black !important;
+}
+
+.sectionPage--editIcon:hover{
+  cursor: pointer;
+  color: blue !important;
+  }
+
+
+.sectionPage--deleteIcon:hover{
+  cursor: pointer;
+  color: red !important;
+  }
+
+
+  

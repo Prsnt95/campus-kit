@@ -1,0 +1,79 @@
+.Todo-wrapper{
+  background-color: rgb(246, 238, 207);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    color: Black;
+
+
+
+}
+
+.todo-title{
+    padding: 10px;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+.inputContainer {
+    text-align: center;
+    
+    display: flex;
+    align-items:center;
+  }
+  
+  .add-btn{
+    height: fit-content;
+    width: fit-content;
+    font-weight: bold;
+
+}
+
+.add-btn {
+    font-weight: bold;
+  }
+  
+  .custom-textfield {
+    width: 100%;
+  }
+  
+  .custom-datepicker {
+    width: 100%;
+  }
+  
+  .active-filter{
+  background-color:  rgb(168, 168, 187) !important;
+  color: azure !important;
+  }
+
+  .todoList--buttonWrapper{
+    margin: 10px;
+    padding: 0px 300px ;
+
+   
+  }
+
+
+
+  .TodoWrapper{
+    padding:20px;
+    display: flex;
+    align-items: start;
+    justify-content: center; 
+}
+.todoCard{
+    /* height: 200px; */
+    width: 400px;
+    margin-top: 10 !important;
+}
+
+.todo--checkbox{
+    padding-left: 0;
+}
+
+.testbtn:hover{
+    cursor:default;
+}
+  
